@@ -1,5 +1,6 @@
 # Code Scanning Javascript Tutorial
 
+
 Welcome to the Code Scanning Javascript Tutorial! This tutorial will take you through how to set up Github Advanced Security: Code Scanning as well as interpret results that it may find. The following repository contains vulnerability [CVE-2018-20835](https://github.com/advisories/GHSA-x2mc-8fgj-3wmr) (aka Zip Slip) that was found by the [GitHub Security Lab](https://securitylab.github.com/).
 
 ## Introduction
