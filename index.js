@@ -274,6 +274,8 @@ exports.extract = function (cwd, opts) {
       })
     }
 
+    var unused = 'testing'
+    
     var onfile = function () {
       var ws = xfs.createWriteStream(name)
       var rs = mapStream(stream, header)
