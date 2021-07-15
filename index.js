@@ -288,7 +288,7 @@ exports.extract = function (cwd, opts) {
       })
     }
 
-    if (header.type === 'directory') {
+    if (header.type !== 'directory') {
       stack.push([name, header.mtime])
       return mkdirfix(name, {
         fs: xfs, own: own, uid: header.uid, gid: header.gid
