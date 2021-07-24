@@ -1,6 +1,6 @@
-# Code Scanning Javascript Tutorial
+# Code Scanning JavaScript Tutorial
 
-Welcome to the Code Scanning Javascript Tutorial! This tutorial will take you through how to set up Github Advanced Security: Code Scanning as well as interpret results that it may find. The following repository contains vulnerability [CVE-2018-20835](https://github.com/advisories/GHSA-x2mc-8fgj-3wmr) (aka Zip Slip) that was found by the [GitHub Security Lab](https://securitylab.github.com/).
+Welcome to the Code Scanning JavaScript Tutorial! This tutorial will take you through how to set up Github Advanced Security: Code Scanning as well as interpret results that it may find. The following repository contains vulnerability [CVE-2018-20835](https://github.com/advisories/GHSA-x2mc-8fgj-3wmr) (aka Zip Slip) that was found by the [GitHub Security Lab](https://securitylab.github.com/).
 
 ## Introduction
 
@@ -43,7 +43,7 @@ Click the `Setup this workflow` button by CodeQL Analysis.
 
 <img src="https://user-images.githubusercontent.com/6920330/96746928-aee17c80-1395-11eb-9eb2-657dd0e92ed9.png" width="70%"/>
 
-This will create a GitHub Actions Workflow file with CodeQL already set up. Since Javascript is an interpreted language there is no need to configure any builds. See the [documentation](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/running-codeql-code-scanning-in-your-ci-system) if you would like to configure CodeQL Analysis with a 3rd party CI system instead of using GitHub Actions.
+This will create a GitHub Actions Workflow file with CodeQL already set up. Since JavaScript is an interpreted language there is no need to configure any builds. See the [documentation](https://docs.github.com/en/free-pro-team@latest/github/finding-security-vulnerabilities-and-errors-in-your-code/running-codeql-code-scanning-in-your-ci-system) if you would like to configure CodeQL Analysis with a 3rd party CI system instead of using GitHub Actions.
 </p>
 </details>
 
