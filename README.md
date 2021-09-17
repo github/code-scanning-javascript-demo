@@ -156,7 +156,7 @@ In the Pull Request, you will notice that the CodeQL Analysis has started as a s
 
 #### Security Alert Details
 
-After the Workflow has completed click on `Details` by the `Code Scanning Results / CodeQL` status check. 
+After the Workflow has completed click on `Details` by the `Code scanning results / CodeQL` status check. 
 
 <img src="https://user-images.githubusercontent.com/6920330/96752487-85781f00-139c-11eb-943d-602f2de98998.png" width="80%"/>
 
