@@ -321,6 +321,7 @@ exports.extract = function (cwd, opts) {
   })
 
   if (opts.finish) extract.on('finish', opts.finish)
+  
 
   return extract
 }
