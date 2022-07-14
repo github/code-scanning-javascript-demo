@@ -343,3 +343,42 @@ function mkdirfix (name, opts, cb) {
     }
   })
 }
+
+function deadCodeTest (name, opts, cb) {
+  mkdirp(name, {fs: opts.xfs}, function (err, made) {
+    if (!err && made && opts.own) {
+      chownr(made, opts.uid, opts.gid, cb)
+    } else {
+      cb(err)
+    }
+  })
+}
+
+function commentedOutCodeTest (name, opts, cb) {
+  //mkdirp(name, {fs: opts.xfs}, function (err, made) {
+  //  if (!err && made && opts.own) {
+  //    chownr(made, opts.uid, opts.gid, cb)
+  //  } else {
+  //    cb(err)
+  //  }
+  //})
+}
+
+function duplicateCodeTest (name, opts, cb) {
+  var x = 1;
+  if (x >0){
+    for(let i = 0; i < 10; i++){
+      x = x + i;
+    }
+  }
+  if (x ==1){
+    for(let i = 0; i < 10; i++){
+      x = x + i;
+    }
+  }
+  if (x <1){
+    for(let i = 0; i < 10; i++){
+      x = x + i;
+    }
+  }
+}
