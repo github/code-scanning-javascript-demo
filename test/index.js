@@ -191,6 +191,8 @@ test('strip', function (t) {
     })
 })
 
+console.log('blah');
+
 test('strip + map', function (t) {
   t.plan(2)
 
