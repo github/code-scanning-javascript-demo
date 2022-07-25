@@ -128,6 +128,8 @@ exports.pack = function (cwd, opts) {
 
     // TODO: add fifo etc...
 
+    console.log("hello");
+
     header = map(header) || header
 
     if (!stat.isFile()) {
