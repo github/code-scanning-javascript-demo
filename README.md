@@ -6,6 +6,6 @@ SECURITY -
 Problem: var srcpath = path.resolve(cwd, header.linkname)
 Solution: var srcpath = path.join(cwd, path.join('/', header.linkname))
 <hr>
-BUILD MONTHS ARRAY - In js
+BUILD EXAMPLE MONTHS ARRAY - In js
 <hr>
-BUILD BINARIES CONVERTER - In py
+BUILD EXAMPLE BINARIES CONVERTER - In py
