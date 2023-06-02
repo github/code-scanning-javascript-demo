@@ -1,5 +1,5 @@
 # Code Scanning JavaScript Tutorial
-# key-a67a11111b11a11a1a1ba1bbcf11f1c5
+key-a67a11111b11a11a1a1ba1bbcf11f1c5
 Welcome to the Code Scanning JavaScript Tutorial! This tutorial will take you through how to set up GitHub Advanced Security: Code Scanning as well as interpret results that it may find. The following repository contains vulnerability [CVE-2018-20835](https://github.com/advisories/GHSA-x2mc-8fgj-3wmr) (aka Zip Slip).
 
 ## Introduction
