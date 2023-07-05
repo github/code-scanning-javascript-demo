@@ -1,16 +1,15 @@
 name: Node.js CI
 
 on:
-  push:
-    branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+  workflow_call:
+    inputs:
+      runs-on: 
+        default: 'ubuntu-latest'
 jobs:
   build:
 
-    runs-on: ubuntu-latest
-
+    runs-on: ${{ inputs.runs-on }}
+    
     strategy:
       matrix:
         node-version: [14.x]
