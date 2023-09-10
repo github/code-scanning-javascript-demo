@@ -1,0 +1,19 @@
+name: GitHub to Asana
+
+on: workflow_dispatch
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repo
+        uses: actions/checkout@v1
+      - name: Create Asana Task
+        uses: ./
+        with:
+          asana_url: 'https://app.asana.com/api/1.0'
+          asana_token: ${{ secrets.ASANA_PAT }}
+          asana_workspace: ${{ secrets.ASANA_WORKSPACE_ID }}
+          asana_project: ${{ secrets.ASANA_PROJECT_ID }}
+          github_token: ${{ secrets.GH_PAT }}
+          sync_direction: 'gh2asana'
