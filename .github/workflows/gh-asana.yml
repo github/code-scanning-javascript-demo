@@ -9,7 +9,7 @@ jobs:
       - name: Checkout Repo
         uses: actions/checkout@v1
       - name: Create Asana Task
-        uses: ./
+        uses: ElizabethBarrord/ghas-asana-integration@main
         with:
           asana_url: 'https://app.asana.com/api/1.0'
           asana_token: ${{ secrets.ASANA_PAT }}
