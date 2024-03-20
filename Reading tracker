@@ -1,0 +1,892 @@
+import java.util.*;
+public class ReadingTracker
+{
+	private static Scanner reader = new Scanner(System.in);
+	private static ArrayList<String> account = new ArrayList<String>();
+	private static ArrayList<String> passwords = new ArrayList<String>();
+	private static ArrayList<String> author = new ArrayList<String>();
+	private static ArrayList<String> books = new ArrayList<String>();
+	private static ArrayList<String> movement = new ArrayList<String>();
+	private static ArrayList<String> topic = new ArrayList<String>();
+	private static ArrayList<String> authorONE = new ArrayList<String>();
+	private static ArrayList<String> booksONE = new ArrayList<String>();
+	private static ArrayList<String> movementONE = new ArrayList<String>();
+	private static ArrayList<String> topicONE = new ArrayList<String>();
+	
+	public static void main(String[] args)
+	{
+		 while(true)
+		 {
+			 homePage();
+		 }
+		
+	}
+	public static void homePage()
+	{
+		System.out.println("Welcome to BookBuddy Latam" + "\n" + "The Number 1 App for Reading Reccomendations" + "\n" +
+		"We will guide through Latin American novels");
+		checkUser();
+	}
+	
+	public static boolean checkUser()
+	{
+		System.out.println("Enter your username to follow: ");
+		String accNumber = reader.nextLine();
+		System.out.println("Enter your password to follow: ");
+		String password = reader.nextLine();
+		int pos = verifyUser(accNumber, password);
+		
+		if(pos == -1)
+		{
+			System.out.println("The username and password DO NOT MATCH " + "\n" +
+			"Please try again");
+			return false;
+		}
+		else
+		{
+			System.out.println("Your username and password MATCH " + "\n" +
+			"Please follow the next steps to find your perfect book match <3");
+			nextPage();
+			return true;
+		}
+	}
+		
+	public static int verifyUser(String userName, String pass)
+	{
+		//Username
+		account.add("Ambar.BOOKLOVER");
+		account.add("Eva123book");
+		account.add("amelia_novel");
+		account.add("Booklover123");
+		account.add("readWORM!!");
+		
+		//passwords of each account
+		passwords.add("AmBaR12!");
+		passwords.add("eV@12345");
+		passwords.add("am3li4..");
+		passwords.add("123ABC!");
+		passwords.add("geek123/");
+		
+		
+		int pos = -1;
+		for(int i = 0; i< account.size(); i++)
+		{
+			if(userName.equals(account.get(i)))
+			{
+				pos = i;
+			}
+		}
+		if( pos == -1)
+		{
+			return -1;
+		}
+		
+		if(pass.equals(passwords.get(pos)))
+		{
+			return pos;
+		}
+		else
+		{
+			return -1;
+		}
+		
+	}
+	
+	public static void arrayLists()
+	{
+		//JORGE LUIS BORGES
+		books.add("Ficciones");
+		author.add("Jorge Luis Borges (Argentina)");
+		movement.add("Surrealism / Postmodernism");
+		topic.add("Identity and Existentialism");
+		
+		books.add("El Aleph");
+		author.add("Jorge Luis Borges (Argentina)");
+		movement.add("Surrealism / Postmodernism");
+		topic.add("Love and Passion");
+		
+		books.add("El jardín de senderos que se bifurcan");
+		author.add("Jorge Luis Borges (Argentina)");
+		movement.add("Surrealism / Postmodernism");
+		topic.add("Identity and Existentialism");
+		
+		//FRANZ TAMAYO
+		books.add("La Pasión de la libertad");
+		author.add("Franz Tamayo (Bolivia)");
+		movement.add("Modernism");
+		topic.add("Power and Corruption");
+		
+		books.add("Kollana Marka");
+		author.add("Franz Tamayo (Bolivia)");
+		movement.add("Nationalism");
+		topic.add("Social Injustice and Nature");
+		
+		books.add("Mis montañas");
+		author.add("Franz Tamayo (Bolivia)");
+		movement.add("Nationalism");
+		topic.add("Historical Memory and Cultural Heritage");
+		
+		
+		//PABLO NERUDA
+		books.add("Veinte poemas de amor y una canción desesperada");
+		author.add("Pablo Neruda (Chile)");
+		movement.add("Modernism");
+		topic.add("Love and Passion");
+		
+		books.add("Canto general");
+		author.add("Pablo Neruda (Chile)");
+		movement.add("Modernism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		books.add("Confieso que he vivido");
+		author.add("Pablo Neruda (Chile)");
+		movement.add("Memoirs");
+		topic.add("Identity and Existentialism");
+		
+		
+		//GABRIEL GARCIA MARQUEZ
+		books.add("Cien años de soledad");
+		author.add("Gabriel García Márquez (Colombia)");
+		movement.add("Realism");		
+		topic.add("Identity and Existentialism");
+		
+		books.add("El amor en los tiempos del cólera");
+		author.add("Gabriel García Márquez (Colombia)");
+		movement.add("Realism");		
+		topic.add("Love and Passion");
+		
+		books.add("Crónica de una muerte anunciada");
+		author.add("Gabriel García Márquez (Colombia)");
+		movement.add("Realism");		
+		topic.add("Love and Passion");
+		
+		
+		//CARMEN LYRA
+		books.add("En una silla de ruedas");
+		author.add("Carmen Lyra (Costa Rica)");
+		movement.add("Realism");		
+		topic.add("Social Injustice and Nature");
+		
+		books.add("Bananos y hombres");
+		author.add("Carmen Lyra (Costa Rica)");
+		movement.add("Realism");		
+		topic.add("Social Injustice and Nature");
+		
+		books.add("Cuentos de mi tía Panchita");
+		author.add("Carmen Lyra (Costa Rica)");
+		movement.add("Realism");		
+		topic.add("Social Injustice and Nature");
+		
+		//JOSE MARTI
+		books.add("Ismaelillo");
+		author.add("Jose Marti (Cuba)");
+		movement.add("Romance");
+		topic.add("Love and Passion");
+		
+		books.add("Versos sencillos");
+		author.add("Jose Marti (Cuba)");
+		movement.add("Romance");
+		topic.add("Identity and Existentialism");
+		books.add( "La Edad de Oro");
+		author.add("Jose Marti (Cuba)");
+		movement.add("Romance");
+		topic.add("Social Injustice and Political Struggle");
+		
+		
+		//JUAN BOSCH
+		books.add("La mañosa");
+		author.add("Juan Bosch (Dominican Republic)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		books.add("De la autoridad a la libertad");
+		author.add("Juan Bosch (Dominican Republic)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		books.add("La Fiesta del Chivo");
+		author.add("Juan Bosch (Dominican Republic)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		//JORGE ENRIQUE ADOUM
+		books.add("Entre Marx y una mujer desnuda");
+		author.add("Jorge Enrique Adoum (Ecuador)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		
+		books.add("El sol bajo las patas de los caballos");
+		author.add("Jorge Enrique Adoum (Ecuador)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		books.add("Los cuadernos de la tierra");
+		author.add("Jorge Enrique Adoum (Ecuador)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		
+		//ROQUE DALTON
+		books.add("Pobrecito poeta que era yo");
+		author.add("Roque Dalton (El Salvador)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		books.add("Miguel Mármol");
+		author.add("Roque Dalton (El Salvador)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		books.add("Las historias prohibidas del Pulgarcito");
+		author.add("Roque Dalton (El Salvador)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		
+		//JUAN CARLOS ONETTI
+		books.add("El astillero");
+		author.add("Juan Carlos Onetti (Uruguay)");
+		movement.add("Realism");
+		topic.add("Identity and Existentialism");
+		
+		books.add("La vida breve");
+		author.add("Juan Carlos Onetti (Uruguay)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Political Struggle");
+		
+		books.add("La muerte y la niña");
+		author.add("Juan Carlos Onetti (Uruguay)");
+		movement.add("Realism");
+		topic.add("Identity and Existentialism");
+		
+		
+		//ROMULO GALLEGOS
+		books.add("Doña Bárbara");
+		author.add("Rómulo Gallegos (Venezuela)");
+		movement.add("Realism");
+		topic.add("Power and Corruption");
+		
+		books.add("Cantaclaro");
+		author.add("Rómulo Gallegos (Venezuela)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Nature");
+		
+		books.add("Canaima");
+		author.add("Rómulo Gallegos (Venezuela)");
+		movement.add("Realism");
+		topic.add("Social Injustice and Nature");
+		
+		
+		//list used for display
+		authorONE.add("Jorge Luis Borges (Argentina)");
+		authorONE.add("Franz Tamayo (Bolivia)");
+		authorONE.add("Pablo Neruda (Chile)");
+		authorONE.add("Gabriel García Márquez (Colombia)");
+		authorONE.add("Carmen Lyra (Costa Rica)");
+		authorONE.add("José Martí (Cuba)");
+		authorONE.add("Juan Bosch (Dominican Republic)");
+		authorONE.add("Jorge Enrique Adoum (Ecuador)");
+		authorONE.add("Roque Dalton (Salvador)");
+		authorONE.add("Juan Carlos Onetti (Uruguay)");
+		authorONE.add("Rómulo Gallegos (Venezuela)");
+		movementONE.add("Surrealism/Postmodernism");
+		movementONE.add("Nationalism"); 	
+		movementONE.add("Realism");
+		movementONE.add("Modernism");
+		movementONE.add("Memoirs");
+		movementONE.add("Romance");
+		topicONE.add("Power and Corruption");
+		topicONE.add("Identity and Existentialism");
+		topicONE.add("Nature and Landscape");
+		topicONE.add("Love and Passion");
+		topicONE.add("Social Injustice and Nature");
+		topicONE.add("Historical Memory and Cultural Heritage");
+		topicONE.add("Family and Relationships");
+		topicONE.add("Social Injustice and Political Struggle");
+		
+		
+		/* PROXIMOS TRES LIBROS
+		 * Jorge Luis Borges (Argentina)
+		 * movement: Surrealism / Postmodernism
+		 */
+		booksONE.add("Ficciones");
+		// topic:  Identity and Existentialism, Nature and Landscape
+		booksONE.add("El Aleph");
+		//topic: Love and Passion, Identity and Existentialism
+		
+		booksONE.add("El jardín de senderos que se bifurcan");
+		// Identity and Existentialism, Nature and Landscape
+		
+		
+		/* PROXIMOS TRES LIBROS
+		 * Franz Tamayo (Bolivia)
+		 * movement: Nationalism
+		 */
+		booksONE.add("La Pasión de la libertad");
+		//topic :  Power and Corruption, Social Injustice and Political Struggle
+		
+		booksONE.add("Kollana Marka");
+		//topic: Nature and Landscape, Historical Memory and Cultural Heritage
+		
+		booksONE.add("Mis montañas");
+		//topic: Nature and Landscape, Historical Memory and Cultural Heritage
+		
+		/* PROXIMOS TRES LIBROS
+		 * Pablo Neruda (Chile)
+		 */
+		booksONE.add("Veinte poemas de amor y una canción desesperada");
+		//topic: Love and Passion, Nature and Landscape
+		//movement: Modernism
+		
+		booksONE.add("Canto general");
+		//topic: Social Injustice and Political Struggle, Nature and Landscape
+		//movement: Modernism
+		
+		booksONE.add("Confieso que he vivido");
+		//topic; Identity and Existentialism, Love and Passion
+		//movement: Memoirs
+		
+		
+		/* PROXIMOS TRES LIBROS
+		 * Gabriel Garcia Marquez (Colombia)
+		 * Movement: Realism
+		 */
+		booksONE.add("Cien años de soledad");
+		//topic; Identity and Existentialism, Love and Passion
+		
+		booksONE.add("El amor en los tiempos del cólera");
+		// topic: Love and Passion, Family and Relationships
+		
+		booksONE.add("Crónica de una muerte anunciada");
+		// topic: Love and Passion, Family and Relationships
+		
+		/* PROXIMOS TRES LIBROS
+		 * Carmen Lyra (Costa Rica)
+		 * Movement: Realism / Feminist literature
+		 * topic: Social Injustice and Political Struggle, Nature and Landscape
+		 */
+		booksONE.add("En una silla de ruedas");
+		booksONE.add("Bananos y hombres");
+		booksONE.add("Cuentos de mi tía Panchita");
+		
+		/* PROXIMOS TRES LIBROS
+		 * Jose Marti (Cuba)
+		 * Movement: Romance / Modernism
+		 */
+		booksONE.add("Ismaelillo");
+		//topic: Identity and Existentialism, Love and Passion
+		
+		booksONE.add("Versos sencillos");
+		//topic: Identity and Existentialism, Love and Passion
+		booksONE.add( "La Edad de Oro");
+		//topic: Social Injustice and Political Struggle, Historical Memory and Cultural Heritage
+		
+		
+		/* PROXIMOS TRES LIBROS
+		 * Juan Bosch (Dominican Republic)
+		 * Movement: Realism
+		 * topic: Social Injustice and Political Struggle, Power and Corruption
+		 */
+		booksONE.add("La mañosa");
+		booksONE.add("De la autoridad a la libertad");
+		booksONE.add("La Fiesta del Chivo");
+		
+		/* PROXIMOS TRES LIBROS
+		 * Jorge Enrique Adoum (Ecuador)
+		 * Movement: Realism / Neorealism
+		 * topic: Social Injustice and Political Struggle, Nature and Landscape
+		 */
+		booksONE.add("Entre Marx y una mujer desnuda");
+		booksONE.add("El sol bajo las patas de los caballos");
+		booksONE.add("Los cuadernos de la tierra");
+		
+		/* PROXIMOS TRES LIBROS
+		 * Roque Dalton (El Salvador)
+		 * Movement: Realism
+		 * topic: Social Injustice and Political Struggle, Identity and Existentialism
+		 */
+		books.add("Pobrecito poeta que era yo");
+		books.add("Miguel Mármol");
+		books.add("Las historias prohibidas del Pulgarcito");
+		
+		/* PROXIMOS TRES LIBROS
+		 * Juan Carlos Onetti (Uruguay)
+		 * Movement: Realism
+		 * topic: Social Injustice and Political Struggle, Identity and Existentialism
+		 */
+		booksONE.add("El astillero");
+		booksONE.add("La vida breve");
+		booksONE.add("La muerte y la niña");
+		
+		/* PROXIMOS TRES LIBROS
+		 * Rómulo Gallegos (Venezuela)
+		 * Movement: Realism / Naturalism
+		 */
+		booksONE.add("Doña Bárbara");
+		//topic: Power and Corruption, Love and Passion
+		
+		booksONE.add("Cantaclaro");
+		//topic: Social Injustice and Political Struggle, Nature and Landscape
+		
+		booksONE.add("Canaima");
+		//topic: Social Injustice and Political Struggle, Nature and Landscape
+		
+	}
+	public static void nextPage()
+	{
+		System.out.println("\n" + "Welcome to the world of Latin American Literature" + "\n" +
+		"- You will obtain curated choices for your next spanish latin read-" + "\n"
+		+ "It is your turn to choose! " + "\n" + "\n" + "FOLLOW THE NEXT INSTRUCTIONS");
+		//Instructions for users to choose their criteria for their next book
+		System.out.println("You will first choose your categories " + "\n" + "\n" + "CATEGORIES:" + "\n"
+		+ "1) Author & Country " + "\n" + "2) Literature Movement" + "\n" + "3)Themes and Topic");
+		System.out.println("\n" + "Do you want to choose your categories now? " + "\n" + "Press 1 to follow" +
+		"\n" + "Press 0 to go back ");
+		
+		int follow = reader.nextInt();
+		if(follow == 1)
+		{
+			System.out.println("Remember you can choose as many categories as you want...");
+			selectCategory();
+		}
+		else if( follow == 0)
+		{
+			System.out.println("Thank You for using BookBuddy Latam!" + "\n" + "See you the next time");
+		}
+		else
+		{
+			System.out.println("It is not a valid option");
+		}
+	}
+		
+	public static void selectCategory()
+	{
+		arrayLists();
+       String authorChoice = authorPart();
+       if(authorChoice.equals("N/A"))
+       {
+       	System.out.println("\n" + "Now lets move on..." + "\n" + "Do you want to choose another category? "
+         	+ "\n" + "Press 1 for YES" + "\n"+ "Press 0 for NO");
+       	int answerOne = reader.nextInt();
+       	if(answerOne == 1)
+       	{
+       		String movementChoice = movementPart();
+       		if(movementChoice.equals("N/A"))
+       		{
+       			System.out.println("\n" + "On to the next one...." + "\n" + "Do you want to choose another category? "
+       			+ "\n" + "Press 1 for YES" + "\n"+ "Press 0 for NO");
+       			int answerTwo = reader.nextInt();
+       			if(answerTwo == 1)
+       			{
+       				String topicChoice = topicPart();
+       				if(topicChoice.equals("N/A"))
+       				{
+       					System.out.println("Please choose a category to follow the process: ");
+       				}
+       				else
+       				{
+       					System.out.println("-----------");
+       					System.out.println("Selected Topic: " + topicChoice);
+       					System.out.println("-----------");
+       					printMatchingBooksOneTOPIC(topicChoice);
+       				}
+               	
+       			}
+       			else if(answerTwo == 0)
+       			{
+       				System.out.println("Please choose a category to follow the process: ");
+       			}
+       			else
+       			{
+               		System.out.println("It is not a valid option");
+       			}
+       		}
+       		else
+       		{
+       			System.out.println("\n" + "On to the next one...." + "\n" + "Do you want to choose another category? "
+               	+ "\n" + "Press 1 for YES" + "\n"+ "Press 0 for NO");
+               	int answerThree = reader.nextInt();
+               	if(answerThree == 1)
+               	{
+               		String topicChoice = topicPart();
+               		if(topicChoice.equals("N/A"))
+               		{
+               			System.out.println("-----------");
+       					System.out.println("Selected Literature Movement: " + movementChoice);
+       					System.out.println("-----------");
+       					printMatchingBooksOneMOVEMENT(movementChoice);
+       					
+               		}
+               		else
+               		{
+               			System.out.println("-----------");
+       					System.out.println("Selected Literature Movement: " + movementChoice);
+       					System.out.println("Selected Topic: " + topicChoice);
+       					System.out.println("-----------");
+       					printMatchingBooksTwoTIMES(movementChoice, topicChoice);
+               		}
+               	}
+               	else if(answerThree == 0)
+               	{
+               		System.out.println("-----------");
+   					System.out.println("Selected Literature Movement: " + movementChoice);
+   					System.out.println("-----------");
+   					printMatchingBooksOneMOVEMENT(movementChoice);
+       			}
+       			else
+       			{
+               		System.out.println("It is not a valid option");
+       			}
+       		}	
+       	}
+       	else
+       	{
+       		System.out.println("Please choose a category to follow the process: ");
+       	}
+       	
+       }
+       else
+       {
+       	System.out.println("\n" + "Now lets move on..." + "\n" + "Do you want to choose another category? "
+ 			+ "\n" + "Press 1 for YES" + "\n"+ "Press 0 for NO");
+       	int answerFour = reader.nextInt();
+       	if(answerFour == 1)
+       	{
+       		String movementChoice = movementPart();
+       		if(movementChoice.equals("N/A"))
+       		{
+       			System.out.println("\n" + "On to the next one...." + "\n" + "Do you want to choose another category? "
+       			+ "\n" + "Press 1 for YES" + "\n"+ "Press 0 for NO");
+       			int answerFive = reader.nextInt();
+       			if(answerFive == 1)
+       			{
+       				String topicChoice = topicPart();
+       				if(topicChoice.equals("N/A"))
+       				{
+       					System.out.println("-----------");
+       					System.out.println("Selected Author: " + authorChoice);
+       					System.out.println("-----------");
+       					printMatchingBooksOneAUTHOR(authorChoice);
+       				}
+       				else
+       				{
+       					System.out.println("-----------");
+       					System.out.println("Selected Author: " + authorChoice);
+       					System.out.println("Selected Topic: " + topicChoice);
+       					System.out.println("-----------");
+       					printMatchingBooksTwoAGAIN(authorChoice, topicChoice);
+       				}
+               	
+       			}
+       			else if(answerFive == 0)
+       			{
+       				System.out.println("-----------");
+   					System.out.println("Selected Author: " + authorChoice);
+   					System.out.println("-----------");
+   					printMatchingBooksOneAUTHOR(authorChoice);
+       			}
+       		}
+       		else
+       		{
+       			System.out.println("\n" + "On to the next one...." + "\n" + "Do you want to choose another category? "
+               	+ "\n" + "Press 1 for YES" + "\n"+ "Press 0 for NO");
+               	int answerSix = reader.nextInt();
+               	if(answerSix == 1)
+       			{
+       				String topicChoice = topicPart();
+       				if(topicChoice.equals("N/A"))
+       				{
+       					System.out.println("-----------");
+       					System.out.println("Selected Author: " + authorChoice);
+       					System.out.println("Selected Literature Movement: " + movementChoice);
+       					System.out.println("-----------");
+       					printMatchingBooksTWO(authorChoice, movementChoice);
+       				}
+               	
+       			}
+               	else if(answerSix == 0)
+               	{
+               		System.out.println("-----------");
+   					System.out.println("Selected Author: " + authorChoice);
+   					System.out.println("Selected Literature Movement: " + movementChoice);
+   					System.out.println("-----------");
+   					printMatchingBooksTWO(authorChoice, movementChoice);
+               	}
+               	else
+               	{
+               		System.out.println("It is not a valid option");
+               	}
+       		}
+       	}
+       	else if(answerFour == 0)
+       	{
+       		System.out.println("-----------");
+       		System.out.println("Selected Author: " + authorChoice);
+       		System.out.println("-----------");
+       		printMatchingBooksOneAUTHOR(authorChoice);
+       	}
+       	else
+       	{
+       		System.out.println("It is not a valid option");
+       	}
+       }
+     }
+     
+	
+	public static String authorPart()
+	{
+	        System.out.println("Would you like to choose by author and country? " + "\n" + "Press 1 for YES" + "\n" +
+	                "Press 0 for NO");
+	        int authorSelect = reader.nextInt();
+	        if (authorSelect == 1)
+	        {
+	            // Iterate over the author ArrayList and print each element along with its position
+	            for (int i = 0; i < authorONE.size(); i++)
+	            {
+	                System.out.println((i + 1) + ". " + authorONE.get(i)); // Index starts from 1
+	            }
+	            System.out.println("\n" + "Please enter the NUMBER of the author you would like to read:  ");
+	            int authorNumber = reader.nextInt();
+	            System.out.println("You have selected: " + authorONE.get(authorNumber - 1));
+	            String yourAuthor = authorONE.get(authorNumber - 1);
+	            return yourAuthor;
+	        }
+	        else
+	        {
+	            String noAuthor = "N/A";
+	            return noAuthor;
+	        }
+	}
+	
+	public static String movementPart()
+	{
+       System.out.println("Would you like to choose by Literature Movement? " + "\n" + "Press 1 for YES" + "\n" +
+               "Press 0 for NO");
+       int movementSelect = reader.nextInt();
+       if (movementSelect == 1)
+       {
+           for (int i = 0; i < movementONE.size(); i++)
+           {
+               System.out.println((i + 1) + ". " + movementONE.get(i)); // Index starts from 1
+           }
+           System.out.println("\n" + "Please enter the NUMBER of the Literature Movement you would like to read:  ");
+           int movementNumber = reader.nextInt();
+           System.out.println("You have selected: " + movementONE.get(movementNumber - 1));
+           String yourMovement = movementONE.get(movementNumber - 1);
+           return yourMovement;
+       }
+       else
+       {
+           String noMovement = "N/A";
+           return noMovement;
+       }
+	}
+	
+	public static String topicPart()
+	{
+       System.out.println("Would you like to choose by Themes and Topic? " + "\n" + "Press 1 for YES" + "\n" +
+               "Press 0 for NO");
+       int topicSelect = reader.nextInt();
+       if (topicSelect == 1)
+       {
+          
+           for (int i = 0; i < topicONE.size(); i++)
+           {
+               System.out.println((i + 1) + ". " + topicONE.get(i)); // Index starts from 1
+           }
+           System.out.println("\n" + "Please enter the NUMBER of the Theme and Topic you would like to read:  ");
+           int topicNumber = reader.nextInt();
+           System.out.println("You have selected: " + topicONE.get(topicNumber - 1));
+           String yourTopic = topicONE.get(topicNumber - 1);
+           return yourTopic;
+       }
+       else
+       {
+           String noTopic = "N/A";
+           return noTopic;
+       }
+	}
+	
+	public static void printMatchingBooksTHREE(String authorPick, String movementPick, String topicPick)
+	{
+	    boolean found = false;
+	    for (int i = 0; i < books.size(); i++)
+	    {
+	        String bookAuthor = author.get(i);
+	        String bookMovement = movement.get(i);
+	        String bookTopic = topic.get(i);
+	        if ((authorPick.equals("N/A") || authorPick.equals(bookAuthor)) &&
+	            (movementPick.equals("N/A") || movementPick.equals(bookMovement)) &&
+	            (topicPick.equals("N/A") || topicPick.equals(bookTopic)))
+	        {
+	        	System.out.println("Here are your reccomendations in our program...");
+	            System.out.println("Book: " + books.get(i));
+	            System.out.println("Author: " + bookAuthor);
+	            System.out.println("Movement: " + bookMovement);
+	            System.out.println("Topic: " + bookTopic);
+	            System.out.println(); // Empty line for separation
+	            found = true;
+	        }
+	    }
+	    if (!found)
+	    {
+	        System.out.println("No books found matching the criteria.");
+	    }
+	}
+	
+	public static void printMatchingBooksTWO(String authorPick, String movementPick)
+	{
+	    boolean found = false;
+	    for (int i = 0; i < books.size(); i++)
+	    {
+	        String bookAuthor = author.get(i);
+	        String bookMovement = movement.get(i);
+	        String bookTopic = topic.get(i);
+	        if ((authorPick.equals("N/A") || authorPick.equals(bookAuthor)) &&
+	            (movementPick.equals("N/A") || movementPick.equals(bookMovement)))
+	        {
+	        	System.out.println("Here are your reccomendations in our program...");
+	            System.out.println("Book: " + books.get(i));
+	            System.out.println("Author: " + bookAuthor);
+	            System.out.println("Movement: " + bookMovement);
+	            System.out.println("Topic: " + bookTopic);
+	            System.out.println(); // Empty line for separation
+	            found = true;
+	        }
+	    }
+	    if (!found)
+	    {
+	        System.out.println("No books found matching the criteria.");
+	    }
+	}
+	public static void printMatchingBooksOneAUTHOR(String authorPick)
+	{
+	    boolean found = false;
+	    for (int i = 0; i < books.size(); i++)
+	    {
+	        String bookAuthor = author.get(i);
+	        String bookMovement = movement.get(i);
+	        String bookTopic = topic.get(i);
+	        if ((authorPick.equals("N/A") || authorPick.equals(bookAuthor)))
+	        {
+	        	System.out.println("Here are your reccomendations in our program...");
+	            System.out.println("Book: " + books.get(i));
+	            System.out.println("Author: " + bookAuthor);
+	            System.out.println("Movement: " + bookMovement);
+	            System.out.println("Topic: " + bookTopic);
+	            System.out.println(); // Empty line for separation
+	            found = true;
+	        }
+	    }
+	    if (!found)
+	    {
+	        System.out.println("No books found matching the criteria.");
+	    }
+	}
+	public static void printMatchingBooksTwoAGAIN(String authorPick, String topicPick)
+	{
+	    boolean found = false;
+	    for (int i = 0; i < books.size(); i++)
+	    {
+	        String bookAuthor = author.get(i);
+	        String bookMovement = movement.get(i);
+	        String bookTopic = topic.get(i);
+	        if ((authorPick.equals("N/A") || authorPick.equals(bookAuthor)) &&
+	            (topicPick.equals("N/A") || topicPick.equals(bookTopic)))
+	        {
+	        	System.out.println("Here are your reccomendations in our program...");
+	            System.out.println("Book: " + books.get(i));
+	            System.out.println("Author: " + bookAuthor);
+	            System.out.println("Movement: " + bookMovement);
+	            System.out.println("Topic: " + bookTopic);
+	            System.out.println(); // Empty line for separation
+	            found = true;
+	        }
+	    }
+	    if (!found)
+	    {
+	        System.out.println("No books found matching the criteria.");
+	    }
+	}
+	
+	public static void printMatchingBooksTwoTIMES(String movementPick, String topicPick)
+	{
+	    boolean found = false;
+	    for (int i = 0; i < books.size(); i++)
+	    {
+	        String bookAuthor = author.get(i);
+	        String bookMovement = movement.get(i);
+	        String bookTopic = topic.get(i);
+	        if ((movementPick.equals("N/A") || movementPick.equals(bookAuthor)) &&
+	            (topicPick.equals("N/A") || topicPick.equals(bookTopic)))
+	        {
+	        	System.out.println("Here are your reccomendations in our program...");
+	            System.out.println("Book: " + books.get(i));
+	            System.out.println("Author: " + bookAuthor);
+	            System.out.println("Movement: " + bookMovement);
+	            System.out.println("Topic: " + bookTopic);
+	            System.out.println(); // Empty line for separation
+	            found = true;
+	        }
+	    }
+	    if (!found)
+	    {
+	        System.out.println("No books found matching the criteria.");
+	    }
+	}
+	
+	public static void printMatchingBooksOneTOPIC(String topicPick)
+	{
+	    boolean found = false;
+	    for (int i = 0; i < books.size(); i++)
+	    {
+	        String bookAuthor = author.get(i);
+	        String bookMovement = movement.get(i);
+	        String bookTopic = topic.get(i);
+	        if ((topicPick.equals("N/A") || topicPick.equals(bookAuthor)))
+	        {
+	        	System.out.println("Here are your reccomendations in our program...");
+	            System.out.println("Book: " + books.get(i));
+	            System.out.println("Author: " + bookAuthor);
+	            System.out.println("Movement: " + bookMovement);
+	            System.out.println("Topic: " + bookTopic);
+	            System.out.println(); // Empty line for separation
+	            found = true;
+	        }
+	    }
+	    if (!found)
+	    {
+	        System.out.println("No books found matching the criteria.");
+	    }
+	}
+	
+	public static void printMatchingBooksOneMOVEMENT(String movementPick)
+	{
+	    boolean found = false;
+	    for (int i = 0; i < books.size(); i++)
+	    {
+	        String bookAuthor = author.get(i);
+	        String bookMovement = movement.get(i);
+	        String bookTopic = topic.get(i);
+	        if ((movementPick.equals("N/A") || movementPick.equals(bookAuthor)))
+	        {
+	        	System.out.println("Here are your reccomendations in our program...");
+	            System.out.println("Book: " + books.get(i));
+	            System.out.println("Author: " + bookAuthor);
+	            System.out.println("Movement: " + bookMovement);
+	            System.out.println("Topic: " + bookTopic);
+	            System.out.println(); // Empty line for separation
+	            found = true;
+	        }
+	    }
+	    if (!found)
+	    {
+	        System.out.println("No books found matching the criteria.");
+	    }
+	}
+}
+
+
+
+
