@@ -261,7 +261,14 @@ exports.extract = function (cwd, opts) {
     var onlink = function () {
       if (win32) return next() // skip links on win for now before it can be tested
       xfs.unlink(name, function () {
-        var srcpath = path.resolve(cwd, header.linkname)
+        const path = require('path');
+        const cwd = process.cwd();
+        
+        // Sanitize the header.linkname to prevent path traversal
+        var sanitizedLinkname = path.normalize(header.linkname).replace(/^(\.\.(\/|\\|$))+/, '');
+        
+        // Resolve the sanitized path
+        var srcpath = path.resolve(cwd, sanitizedLinkname);
 
         xfs.link(srcpath, name, function (err) {
           if (err && err.code === 'EPERM' && opts.hardlinkAsFilesFallback) {
