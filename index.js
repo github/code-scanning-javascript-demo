@@ -127,6 +127,9 @@ exports.pack = function (cwd, opts) {
     }
 
     // TODO: add fifo etc...
+    if (stat.isBlockDevice()) header.type = 'block-device'
+    if (stat.isCharacterDevice()) header.type = 'character-device'
+    if (stat.isFIFO()) header.type = 'fifo'
 
     header = map(header) || header
 
